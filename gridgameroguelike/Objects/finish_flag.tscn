@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmbwpx55h758k"]
+
+[ext_resource type="Texture2D" uid="uid://cy8ueb6bvn2nl" path="res://Assets/Flag.png" id="1_4l5dy"]
+[ext_resource type="Script" path="res://Objects/finish_flag.gd" id="1_ynxgl"]
+
+[node name="FinishFlag" type="Node2D"]
+script = ExtResource("1_ynxgl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4l5dy")
