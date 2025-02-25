@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://7sj3tvpw5hoa"]
+
+[ext_resource type="Texture2D" uid="uid://dnftisekrvkeu" path="res://Assets/Tile.png" id="1_2pxp5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3524"]
+texture = ExtResource("1_2pxp5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Floor"
+terrain_set_0/terrain_0/color = Color(0.698039, 0.780392, 0.803922, 1)
+sources/0 = SubResource("TileSetAtlasSource_k3524")
