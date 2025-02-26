@@ -5,16 +5,17 @@ signal tile_map_completed
 
 const TILE_SIZE = 32
 const DIRECTIONS_32 = [
-		Vector2(32, 0),   # Right
-		Vector2(-32, 0),  # Left
-		Vector2(0, 32),   # Down
-		Vector2(0, -32)   # Up
+	Vector2(0, -32),  # Up
+	Vector2(0, 32),   # Down
+	Vector2(-32, 0),  # Left
+	Vector2(32, 0)    # Right
 ]
+
 const DIRECTIONS = [
-		Vector2i(1, 0),   # Right
-		Vector2i(-1, 0),  # Left
-		Vector2i(0, 1),   # Down
-		Vector2i(0, -1)   # Up
+	Vector2i(0, -1),  # Up
+	Vector2i(0, 1),   # Down
+	Vector2i(-1, 0),  # Left
+	Vector2i(1, 0)    # Right
 ]
 
 #tileMap in tile syntax

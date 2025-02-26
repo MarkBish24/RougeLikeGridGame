@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://divuh8ecgqpj6"]
+[gd_scene load_steps=4 format=3 uid="uid://divuh8ecgqpj6"]
 
 [ext_resource type="Texture2D" uid="uid://s3m1dlbol8n3" path="res://Assets/Player.png" id="1_b11fe"]
 [ext_resource type="Script" path="res://Objects/player.gd" id="1_jcwbf"]
+[ext_resource type="PackedScene" uid="uid://dxlxu10waw4xv" path="res://Managers/arrow_manager.tscn" id="3_cjfo4"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_jcwbf")
@@ -9,3 +10,5 @@ script = ExtResource("1_jcwbf")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
 texture = ExtResource("1_b11fe")
+
+[node name="ArrowManager" parent="." instance=ExtResource("3_cjfo4")]
