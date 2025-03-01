@@ -13,6 +13,7 @@ func _ready() -> void:
 	hide_all_arrows()
 	
 func hide_all_arrows() -> void:
+	print("Hiding Arrows")
 	for arrow in arrows:
 		arrow.visible = false
 		arrow.get_node("AnimationPlayer").pause()
@@ -38,4 +39,16 @@ func play_right_arrow() -> void:
 	future_position.position = Vector2(32, 0)
 
 func get_future_position() -> Vector2:
-	return future_position.global_position
+	return future_position.position
+	
+func get_current_arrow_direction() -> Vector2:
+	if up.visible:
+		return Vector2(0, -32)
+	elif down.visible:
+		return Vector2(0, 32)
+	elif left.visible:
+		return Vector2(-32, 0)
+	elif right.visible:
+		return Vector2(32, 0)
+	else:
+		return Vector2.ZERO
