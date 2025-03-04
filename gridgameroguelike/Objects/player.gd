@@ -1,6 +1,7 @@
 extends Node2D
 
 signal player_direction(direction:int)
+signal player_moved()
 
 @onready var arrow_manager:Node2D = $ArrowManager
 
@@ -15,32 +16,26 @@ func _process(delta: float) -> void:
 		arrow_manager.hide_all_arrows()
 		arrow_manager.play_up_arrow()
 		player_direction.emit(0)
-		arrow_manager.hide_all_arrows()
-		arrow_manager.play_up_arrow()
 	if Input.is_action_just_pressed("move_down"):
 		arrow_manager.hide_all_arrows()
 		arrow_manager.play_down_arrow()
 		player_direction.emit(1)
-		arrow_manager.hide_all_arrows()
-		arrow_manager.play_down_arrow()
 	if Input.is_action_just_pressed("move_left"):
 		arrow_manager.hide_all_arrows()
 		arrow_manager.play_left_arrow()
 		player_direction.emit(2)
-		arrow_manager.hide_all_arrows()
-		arrow_manager.play_left_arrow()
 	if Input.is_action_just_pressed("move_right"):
 		arrow_manager.hide_all_arrows()
 		arrow_manager.play_right_arrow()
 		player_direction.emit(3)
-		arrow_manager.hide_all_arrows()
-		arrow_manager.play_right_arrow()
+
 
 func move_player(pos:Vector2):
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_ELASTIC)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "position", pos, 0.15)
+	tween.tween_property(self, "position", pos, 0.2)
+	player_moved.emit()
 	
 func get_future_position() -> Vector2:
 	return arrow_manager.get_future_position() + self.position

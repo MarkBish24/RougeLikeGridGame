@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://daqelyjxcxgv4"]
+[gd_scene load_steps=11 format=3 uid="uid://daqelyjxcxgv4"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_6lhnl"]
 [ext_resource type="PackedScene" uid="uid://sn48a563gvhm" path="res://TileMap/tile_map.tscn" id="1_tua4u"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://be3b3ctxjg02a" path="res://Managers/object_manager.tscn" id="3_j4eya"]
 [ext_resource type="PackedScene" uid="uid://divuh8ecgqpj6" path="res://Objects/player.tscn" id="4_8fekr"]
 [ext_resource type="PackedScene" uid="uid://cmbwpx55h758k" path="res://Objects/finish_flag.tscn" id="4_n07hq"]
+[ext_resource type="PackedScene" uid="uid://cwd3k6r07t102" path="res://Objects/rock.tscn" id="6_0qikq"]
+[ext_resource type="PackedScene" uid="uid://m76ucu1wt6t0" path="res://Objects/time_based_enemy.tscn" id="7_0qu3i"]
+[ext_resource type="PackedScene" uid="uid://drhjf0vg2f470" path="res://Objects/turn_base_enemy.tscn" id="7_l3xd2"]
+[ext_resource type="PackedScene" uid="uid://d1iiwnsld3kd5" path="res://Managers/healthbar_manager.tscn" id="8_6d7tl"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6lhnl")
@@ -17,7 +21,12 @@ script = ExtResource("2_qq3vg")
 [node name="TileMapLayer" parent="." instance=ExtResource("1_tua4u")]
 
 [node name="ObjectManager" parent="." instance=ExtResource("3_j4eya")]
+turn_base_enemy = ExtResource("7_l3xd2")
+rock = ExtResource("6_0qikq")
+time_base_enemy = ExtResource("7_0qu3i")
 
 [node name="FinishFlag" parent="ObjectManager" instance=ExtResource("4_n07hq")]
 
 [node name="Player" parent="ObjectManager" instance=ExtResource("4_8fekr")]
+
+[node name="HealthbarManager" parent="." instance=ExtResource("8_6d7tl")]

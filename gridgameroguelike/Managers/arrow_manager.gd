@@ -13,7 +13,6 @@ func _ready() -> void:
 	hide_all_arrows()
 	
 func hide_all_arrows() -> void:
-	print("Hiding Arrows")
 	for arrow in arrows:
 		arrow.visible = false
 		arrow.get_node("AnimationPlayer").pause()

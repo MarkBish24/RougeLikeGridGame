@@ -103,3 +103,6 @@ func get_farthest_tile_position(start_tile: Vector2):
 			 
 	return farthest_tile
 	
+func get_tile_positions_32() -> Array:
+	return tile_positions_32
+	
